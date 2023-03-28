@@ -16,6 +16,8 @@ import "./App.css";
 
 const App = () => {
   const [gonderiler, setGonderi] = useState(sahteVeri);
+  const [arama, setArama] = useState("");
+
   // Gönderi nesneleri dizisini tutmak için "gonderiler" adlı bir state oluşturun, **sahteVeri'yi yükleyin**.
   // Artık sahteVeri'ye ihtiyacınız olmayacak.
   // Arama çubuğunun çalışması için , arama kriterini tutacak başka bir state'e ihtiyacımız olacak.
@@ -46,7 +48,8 @@ const App = () => {
       {/* AramaÇubuğu ve Gönderiler'i render etmesi için buraya ekleyin */}
       <AramaÇubuğu />
       {/* Her bileşenin hangi proplara ihtiyaç duyduğunu kontrol edin, eğer ihtiyaç varsa ekleyin! */}
-      <Gönderiler postLikeFnCb={gonderiyiBegen} posts={gonderiler} />
+
+      <Gönderiler gonderiyiBegen={gonderiyiBegen} gonderiler={gonderiler} />
     </div>
   );
 };
